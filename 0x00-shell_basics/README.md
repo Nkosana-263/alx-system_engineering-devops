@@ -74,7 +74,7 @@ $
 ```
 
 ## Task 5. I love numbers
-`-listfilesdigitonly`  
+`5-listfilesdigitonly`  
 Displays current directory contents.
   - Long format
   - with user and group IDs displayed numerically
