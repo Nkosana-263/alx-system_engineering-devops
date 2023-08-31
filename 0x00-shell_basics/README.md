@@ -272,25 +272,46 @@ julien@ubuntu:/tmp/h$
 ```
 
 ## Task 18. Life is a series of commas, not periods
-*1-listit*  
-Displays the contents list of your current directory.
+*103-commas*  
+ Lists all the files and directories of the current directory, separated by commas (`,`).
 
   Example
 ```console
-$ ./1-listit
-Applications    Documents   Dropbox Movies Pictures
-Desktop Downloads   Library Music Public
-$
+ubuntu@ubuntu:~/$ ls -a
+
+.  ..  0-commas  0-commas-checks  1-empty_casks  2-gifs  3-directories  4-zeros  5-rot13  6-odd  7-sort_rot13  Makefile  quote  .test  test_dir  test.var
+
+ubuntu@ubuntu:~/$ ./103-commas
+
+./, ../, 0-commas, 0-commas-checks/, 1-empty_casks, 2-gifs, 3-directories, 4-zeros, 5-rot13, 6-odd, 7-sort_rot13, Makefile, quote, .test, test_dir/, test.var
+
+ubuntu@ubuntu:~/$
 ```
 
-## Task 19. What’s in there?
-*1-listit*  
-Displays the contents list of your current directory.
+## Task 19. File type: School
+*school.mgc*  
+Creates a magic file `school.mgc` that can be used with the command `file` to detect `School` data files. `School` data files always contain the string `SCHOOL` at offset 0.
 
   Example
 ```console
-$ ./1-listit
-Applications    Documents   Dropbox Movies Pictures
-Desktop Downloads   Library Music Public
-$
+ubuntu@ip-172-31-63-244:/tmp/magic$ cp /bin/ls .
+ubuntu@ip-172-31-63-244:/tmp/magic$ ls -la
+total 268
+drwxrwxr-x  2 ubuntu ubuntu   4096 Sep 20 02:44 .
+drwxrwxrwt 11 root   root   139264 Sep 20 02:44 ..
+-rw-r--r--  1 ubuntu ubuntu    496 Sep 20 02:42 school.mgc
+-rwxr-xr-x  1 ubuntu ubuntu 110080 Sep 20 02:43 ls
+-rw-rw-r--  1 ubuntu ubuntu     50 Sep 20 02:06 thisisaschoolfile
+-rw-rw-r--  1 ubuntu ubuntu     30 Sep 20 02:16 thisisatextfile
+ubuntu@ip-172-31-63-244:/tmp/magic$ file --mime-type -m school.mgc *
+school.mgc:         application/octet-stream
+ls:                    application/octet-stream
+thisisaschoolfile: School
+thisisatextfile:       text/plain
+ubuntu@ip-172-31-63-244:/tmp/magic$ file -m school.mgc *
+school.mgc:         data
+ls:                    data
+thisisaschoolfile: School data
+thisisatextfile:       ASCII text
+ubuntu@ip-172-31-63-244:/tmp/magic$
 ```
