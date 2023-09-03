@@ -13,7 +13,15 @@ nkosana@ubuntu:/tmp/h$
 ```
 
 ## Task 1. Who am I
-[`1-who_am_i`](1-who_am_i)
+[`1-who_am_i`](1-who_am_i)   
+Prints the effective username of the current user.  
+
+Example:
+```console
+nkosana@ubuntu:/tmp/h$ ./1-who_am_i
+nkosana
+nkosana@ubuntu:/tmp/h$ 
+```
 
 ## Task 2. Groups
 [`2-groups`](2-groups)
