@@ -2,7 +2,15 @@
 ![header](https://linuxopsys.com/wp-content/uploads/2021/12/linux-file-permissions-featured-image.png)
 
 ## Task 0. My name is Betty
-[`0-iam_betty`](0-iam_betty)
+[`0-iam_betty`](0-iam_betty)   
+Switches the current user to the user `betty`.
+
+Example:
+```console
+nkosana@ubuntu:/tmp/h$ tail -1 0-iam_betty | wc -c
+9
+nkosana@ubuntu:/tmp/h$
+```
 
 ## Task 1. Who am I
 [`1-who_am_i`](1-who_am_i)
