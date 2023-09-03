@@ -142,26 +142,164 @@ Sets the mode of the file `hello` to this:
 ```
 
 ## Task 10. Look in the mirror
-[`10-mirror_permissions`](10-mirror_permissions)
+[`10-mirror_permissions`](10-mirror_permissions)  
+Sets the mode of the file `hello` the same as `olleh`’s mode.
+
+Example:
+```console
+nkosana@ubuntu:/tmp/h$ ls -l
+total 8
+-rwxrw-r-- 1 nkosana nkosana 42 Sep 20 14:45 10-mirror_permissions
+-rwxr-x-wx 1 nkosana nkosana 23 Sep 20 14:25 hello
+-rw-rw-r-- 1 nkosana nkosana  0 Sep 20 14:43 olleh
+nkosana@ubuntu:/tmp/h$ ./10-mirror_permissions 
+nkosana@ubuntu:/tmp/h$ ls -l
+total 8
+-rwxrw-r-- 1 nkosana nkosana 42 Sep 20 14:45 10-mirror_permissions
+-rw-rw-r-- 1 nkosana nkosana 23 Sep 20 14:25 hello
+-rw-rw-r-- 1 nkosana nkosana  0 Sep 20 14:43 olleh
+nkosana@ubuntu:/tmp/h$ 
+```
 
 ## Task 11. Directories
-[`11-directories_permissions`](11-directories_permissions)
+[`11-directories_permissions`](11-directories_permissions)  
+Adds execute permission to all subdirectories of the current directory for the owner, the group owner and all other users.
+
+Example:
+```console
+nkosana@ubuntu:/tmp/h$ ls -l
+total 20
+-rwxrwxr-x 1 nkosana nkosana   24 Sep 20 14:53 11-directories_permissions
+drwx------ 2 nkosana nkosana 4096 Sep 20 14:49 dir0
+drwx------ 2 nkosana nkosana 4096 Sep 20 14:49 dir1
+drwx------ 2 nkosana nkosana 4096 Sep 20 14:49 dir2
+-rw-rw-r-- 1 nkosana nkosana   23 Sep 20 14:25 hello
+nkosana@ubuntu:/tmp/h$ ./11-directories_permissions 
+nkosana@ubuntu:/tmp/h$ ls -l
+total 20
+-rwxrwxr-x 1 nkosana nkosana   24 Sep 20 14:53 11-directories_permissions
+drwx--x--x 2 nkosana nkosana 4096 Sep 20 14:49 dir0
+drwx--x--x 2 nkosana nkosana 4096 Sep 20 14:49 dir1
+drwx--x--x 2 nkosana nkosana 4096 Sep 20 14:49 dir2
+-rw-rw-r-- 1 nkosana nkosana   23 Sep 20 14:25 hello
+nkosana@ubuntu:/tmp/h$ 
+```
 
 ## Task 12. More directories
-[`12-directory_permissions`](12-directory_permissions)
+[`12-directory_permissions`](12-directory_permissions)  
+Creates a directory called `my_dir` with permissions 751 in the working directory.
+
+Example:
+```console
+nkosana@ubuntu:/tmp/h$ ls -l
+total 20
+-rwxrwxr-x 1 nkosana nkosana   39 Sep 20 14:59 12-directory_permissions
+drwx--x--x 2 nkosana nkosana 4096 Sep 20 14:49 dir0
+drwx--x--x 2 nkosana nkosana 4096 Sep 20 14:49 dir1
+drwx--x--x 2 nkosana nkosana 4096 Sep 20 14:49 dir2
+-rw-rw-r-- 1 nkosana nkosana   23 Sep 20 14:25 hello
+nkosana@ubuntu:/tmp/h$ ./12-directory_permission s
+nkosana@ubuntu:/tmp/h$ ls -l
+total 24
+-rwxrwxr-x 1 nkosana nkosana   39 Sep 20 14:59 12-directory_permissions
+drwx--x--x 2 nkosana nkosana 4096 Sep 20 14:49 dir0
+drwx--x--x 2 nkosana nkosana 4096 Sep 20 14:49 dir1
+drwx--x--x 2 nkosana nkosana 4096 Sep 20 14:49 dir2
+drwxr-x--x 2 nkosana nkosana 4096 Sep 20 14:59 my_dir
+-rw-rw-r-- 1 nkosana nkosana   23 Sep 20 14:25 hello
+nkosana@ubuntu:/tmp/h$ 
+```
 
 ## Task 13. Change group
-[`13-change_group`](13-change_group)
+[`13-change_group`](13-change_group)  
+Changes the group owner to `school` for the file `hello`.
+
+Example:
+```console
+nkosana@ubuntu:/tmp/h$ ls -l
+total 24
+-rwxrwxr-x 1 nkosana nkosana   34 Sep 20 15:03 13-change_group
+drwx--x--x 2 nkosana nkosana 4096 Sep 20 14:49 dir0
+drwx--x--x 2 nkosana nkosana 4096 Sep 20 14:49 dir1
+drwx--x--x 2 nkosana nkosana 4096 Sep 20 14:49 dir2
+drwxr-x--x 2 nkosana nkosana 4096 Sep 20 14:59 my_dir
+-rw-rw-r-- 1 nkosana nkosana   23 Sep 20 14:25 hello
+nkosana@ubuntu:/tmp/h$ sudo ./13-change_group 
+nkosana@ubuntu:/tmp/h$ ls -l
+total 24
+-rwxrwxr-x 1 nkosana nkosana      34 Sep 20 15:03 13-change_group
+drwx--x--x 2 nkosana nkosana    4096 Sep 20 14:49 dir0
+drwx--x--x 2 nkosana nkosana    4096 Sep 20 14:49 dir1
+drwx--x--x 2 nkosana nkosana    4096 Sep 20 14:49 dir2
+drwxr-x--x 2 nkosana nkosana    4096 Sep 20 14:59 my_dir
+-rw-rw-r-- 1 nkosana school   23 Sep 20 14:25 hello
+nkosana@ubuntu:/tmp/h$ 
+```
 
 ## Task 14. Owner and group
-[`100-change_owner_and_group`](100-change_owner_and_group)
+[`100-change_owner_and_group`](100-change_owner_and_group)  
+Changes the owner to `vincent` and the group owner to `staff` for all the files and directories in the working directory.
+
+Example:
+```console
+nkosana@ubuntu:/tmp/h$ ls -l
+total 24
+-rwxrwxr-x 1 nkosana nkosana   36 Sep 20 15:06 100-change_owner_and_group
+drwx--x--x 2 nkosana nkosana 4096 Sep 20 14:49 dir0
+drwx--x--x 2 nkosana nkosana 4096 Sep 20 14:49 dir1
+drwx--x--x 2 nkosana nkosana 4096 Sep 20 14:49 dir2
+drwxr-x--x 2 nkosana nkosana 4096 Sep 20 14:59 my_dir
+-rw-rw-r-- 1 nkosana nkosana   23 Sep 20 14:25 hello
+nkosana@ubuntu:/tmp/h$ sudo ./100-change_owner_and_group 
+nkosana@ubuntu:/tmp/h$ ls -l
+total 24
+-rwxrwxr-x 1 vincent staff   36 Sep 20 15:06 100-change_owner_and_group
+drwx--x--x 2 vincent staff 4096 Sep 20 14:49 dir0
+drwx--x--x 2 vincent staff 4096 Sep 20 14:49 dir1
+drwx--x--x 2 vincent staff 4096 Sep 20 14:49 dir2
+drwxr-x--x 2 vincent staff 4096 Sep 20 14:59 my_dir
+-rw-rw-r-- 1 vincent staff   23 Sep 20 14:25 hello
+nkosana@ubuntu:/tmp/h$ 
+```
 
 ## Task 15. Symbolic links
-[`101-symbolic_link_permissions`](101-symbolic_link_permissions)
+[`101-symbolic_link_permissions`](101-symbolic_link_permissions)  
+Changes the owner and the group owner of `_hello` to `vincent` and `staff` respectively.
+
+Example"
+```console
+nkosana@ubuntu:/tmp/h$ ls -l
+total 24
+-rwxrwxr-x 1 nkosana nkosana   44 Sep 20 15:12 101-symbolic_link_permissions
+-rw-rw-r-- 1 nkosana nkosana   23 Sep 20 14:25 hello
+lrwxrwxrwx 1 nkosana nkosana    5 Sep 20 15:10 _hello -> hello
+nkosana@ubuntu:/tmp/h$ sudo ./101-symbolic_link_permissions 
+nkosana@ubuntu:/tmp/h$ ls -l
+total 24
+-rwxrwxr-x 1 nkosana nkosana      44 Sep 20 15:12 101-symbolic_link_permissions
+-rw-rw-r-- 1 nkosana nkosana      23 Sep 20 14:25 hello
+lrwxrwxrwx 1 vincent  staff    5 Sep 20 15:10 _hello -> hello
+nkosana@ubuntu:/tmp/h$ 
+```
 
 ## Task 16. If only
-[`102-if_only`](102-if_only)
+[`102-if_only`](102-if_only)  
+Changes the owner of the file `hello` to `betty` only if it is owned by the user `guillaume`.
+
+Example:
+```console
+nkosana@ubuntu:/tmp/h$ ls -l
+total 24
+-rwxrwxr-x 1 nkosana    nkosana      47 Sep 20 15:18 102-if_only 
+-rw-rw-r-- 1 guillaume nkosana      23 Sep 20 14:25 hello
+nkosana@ubuntu:/tmp/h$ sudo ./102-if_only 
+nkosana@ubuntu:/tmp/h$ ls -l
+total 24
+-rwxrwxr-x 1 nkosana nkosana      47 Sep 20 15:18 102-if_only 
+-rw-rw-r-- 1 betty  nkosana      23 Sep 20 14:25 hello
+nkosana@ubuntu:/tmp/h$ 
+```
 
 ## Task 17. Star Wars
-[`103-Star_Wars`](103-Star_Wars)
-
+[`103-Star_Wars`](103-Star_Wars)  
+Plays the StarWars IV episode in the terminal.
