@@ -113,10 +113,33 @@ nkosana@ubuntu:/tmp/h$
 ```
 
 ## Task 8. James Bond
-[`8-James_Bond`](8-James_Bond)
+[`8-James_Bond`](8-James_Bond)  
+Sets the permission to the `file` hello as follows:
+
+  - Owner: no permission at all
+  - Group: no permission at all
+  - Other users: all the permissions
+
+Example:
+```console
+nkosana@ubuntu:/tmp/h$ ls -l
+total 8
+-rwxrw-r-- 1 nkosana nkosana 28 Sep 20 14:40 8-James_Bond
+-rwxr-x--x 1 nkosana nkosana 23 Sep 20 14:25 hello
+nkosana@ubuntu:/tmp/h$ ./8-James_Bond 
+nkosana@ubuntu:/tmp/h$ ls -l
+total 8
+-rwxrw-r-- 1 nkosana nkosana 28 Sep 20 14:40 8-James_Bond
+-------rwx 1 nkosana nkosana 23 Sep 20 14:25 hello
+nkosana@ubuntu:/tmp/h$ 
+```
 
 ## Task 9. John Doe
-[`9-John_Doe`](9-John_Doe)
+[`9-John_Doe`](9-John_Doe)  
+Sets the mode of the file `hello` to this:
+```console
+-rwxr-x-wx 1 nkosana nkosana 23 Sep 20 14:25 hello
+```
 
 ## Task 10. Look in the mirror
 [`10-mirror_permissions`](10-mirror_permissions)
