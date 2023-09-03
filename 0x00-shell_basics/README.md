@@ -1,4 +1,4 @@
-# Shell basics
+# Shell basics :snail:
 ![Read the fucking manual](https://github.com/Nkosana-263/alx-system_engineering-devops/assets/60256844/6e5d551d-4bae-4bd2-bbb7-195186e028e8)
 
 ## Task 0. Where am I?
